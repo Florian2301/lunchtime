@@ -26,7 +26,8 @@ zu 2.
 - da ich mich erst seit kurzem mit MySQL und PHP befasst habe, ist mir eine komplexe Abfrage nicht geglückt
 - Ich konnte zwischenzeitlich die korrekte Abfrage der Kategorie "Essen" erstellen, aber mit zusätzlichen Parametern bräuchte ich etwas mehr Zeit
 - Lösung: Unbedingt weiter daran arbeiten ;)
-- Update 07.03.: Abfrage der Kategore Essen, Entfernung ud Preis problemlos. Mit Vegatarisch hat es noch nicht fehlerfrei geklappt. Als nächsten Schritt werden die Daten über mehrere Tabellen verteilt und anhand von Fremdschlüsseln abgefragt
+- Update 07.03.: Abfrage der Kategore Essen, Entfernung und Preis problemlos. Mit Vegatarisch hat es noch nicht fehlerfrei geklappt. Als nächsten Schritt werden die Daten über mehrere Tabellen verteilt und anhand von Fremdschlüsseln abgefragt
+- Update 14.03.: neue Abfrage, läuft unter phpMyAdmin problemlos aber nicht in der App
 
 zu 3.
 

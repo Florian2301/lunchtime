@@ -5,6 +5,7 @@ function ergebnis($essen, $entfernung, $preis, $veggie) {
 
     $mysqli = new mysqli('localhost', 'root', '', 'Mittagessen');
     
+    /*
     if ($essen === "Alles" && $entfernung === "Egal" && $preis === "Egal") {
         $sql = "SELECT * FROM Lunchtime";
     }
@@ -19,10 +20,22 @@ function ergebnis($essen, $entfernung, $preis, $veggie) {
     }
     else {
         $sql = "SELECT * FROM Lunchtime WHERE Kategorie = '$essen'";
-    }
+    }*/
+
+    
+    $sql = "SELECT * FROM Lunchtime
+            WHERE (Kategorie = '$essen' OR Egal = '$essen')
+            AND Entfernung IN ( SELECT Entfernung From Lunchtime 
+                                WHERE (Entfernung = '$entfernung' OR Egal = '$entfernung')
+                                AND Preis IN (  SELECT Preis From Lunchtime 
+                                                WHERE (Preis = '$preis' OR Egal = '$preis')
+                                                AND Veggie IN ( SELECT Veggie FROM Lunchtime
+                                                                WHERE Veggie = '$veggie' OR Egal = '$veggie')))            
+            ";
+      
 
     $response = $mysqli->query($sql) or die("error: {$mysqli->error}\n");
-    
+    echo print_r($sql);
 ?>
 
 <div class="container" style='margin-top: 2rem'>

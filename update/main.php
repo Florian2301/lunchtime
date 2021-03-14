@@ -4,7 +4,7 @@ include "ergebnisliste.php";
 include "datenbank.php";
 
 //createdatabase(); 1 x aufrufen, um die Tabelle anzulegen
-//insertdata(); 1 x aufrufen, um die Daten in die Tabelle einzufügen
+//insertdata(); //1 x aufrufen, um die Daten in die Tabelle einzufügen
 
 htmlanfang("It's Lunchtime");
 
@@ -17,8 +17,8 @@ if (isset($_POST["absenden"])) {
 };
 
 // Funktion Formular
-function auswahlkriterien($essen = "Alles", $entfernung = "Egal", $preis ="Egal", $veggie = "Egal") {
-    $speisen = ["Alles", "Burger", "Pizza/Pasta", "Asiatisch", "Hausmannskost", "Sonstiges"];
+function auswahlkriterien($essen = "Egal", $entfernung = "Egal", $preis ="Egal", $veggie = "Egal") {
+    $speisen = ["Egal", "Alles", "Burger", "Pizza/Pasta", "Asiatisch", "Hausmannskost", "Sonstiges"];
     $distanz = ["Egal", "5 Min", "5-10 Min", "10 Min"];
     $kosten = ["Egal", "günstig", "mittel", "teuer"];
     $ernaehrung = ["Egal", "große Auswahl", "mittlere Auswahl", "nicht vegatarisch"];
@@ -100,7 +100,7 @@ function auswahlkriterien($essen = "Alles", $entfernung = "Egal", $preis ="Egal"
 
 // Funktion absenden der Tabelle
 function absenden() {
-    isset($_POST["essen"]) ? $essen = $_POST["essen"] : $essen = "Alles";
+    isset($_POST["essen"]) ? $essen = $_POST["essen"] : $essen = "Egal";
     isset($_POST["entfernung"]) ? $entfernung = $_POST["entfernung"] : $entfernung = "Egal";
     isset($_POST["preis"]) ? $preis = $_POST["preis"] : $preis = "Egal";
     isset($_POST["veggie"]) ? $veggie = $_POST["veggie"] : $veggie = "Egal";
